@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaonan.user.dao.UserDAO" >
+    <resultMap id="BaseResultMap" type="com.xiaonan.user.entity.User" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="person_name" property="personName" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="user_code" property="userCode" jdbcType="VARCHAR" />
+        <result column="vip" property="vip" jdbcType="INTEGER" />
+        <result column="level" property="level" jdbcType="BIGINT" />
+        <result column="experience" property="experience" jdbcType="BIGINT" />
+        <result column="money" property="money" jdbcType="BIGINT" />
+        <result column="masonry" property="masonry" jdbcType="BIGINT" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="mailbox" property="mailbox" jdbcType="VARCHAR" />
+        <result column="state" property="state" jdbcType="INTEGER" />
+        <result column="var" property="var" jdbcType="INTEGER" />
+        <result column="del_sta" property="delSta" jdbcType="INTEGER" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+        <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+        <result column="last_time" property="lastTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        id, user_name, person_name, password, user_code, vip, level, experience, money, masonry,
+        phone, mailbox, state, var, del_sta, create_time, create_by, update_time, update_by,
+        last_time
+    </sql>
+    
+    <select id="selectList" resultMap="BaseResultMap">
+        SELECT
+            <include refid="Base_Column_List"/>
+        FROM
+            t_user
+        <where>
+            <if test="entity.userName != null and entity.userName != ''">
+                and user_name = #{entity.userName}
+            </if>
+        </where>
+    </select>
+</mapper>
