@@ -1,4 +1,4 @@
-package com.xiaonan.common.utlis;
+package com.xiaonan.utils;
 
 /**
  * <p>Description: [类功能描述]</p>

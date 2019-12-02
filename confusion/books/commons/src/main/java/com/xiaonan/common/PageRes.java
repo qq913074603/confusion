@@ -1,4 +1,4 @@
-package com.xiaonan.common.utlis;
+package com.xiaonan.common;
 
 import lombok.Data;
 

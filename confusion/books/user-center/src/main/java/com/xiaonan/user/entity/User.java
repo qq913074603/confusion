@@ -1,6 +1,6 @@
 package com.xiaonan.user.entity;
 
-import com.xiaonan.common.utlis.PageRes;
+import com.xiaonan.common.PageRes;
 import lombok.Data;
 
 import java.io.Serializable;
