@@ -1,6 +1,7 @@
 package com.xiaonan.user.controller.test;
 
 import com.alicp.jetcache.Cache;
+import com.alicp.jetcache.anno.CacheRefresh;
 import com.alicp.jetcache.anno.CacheType;
 import com.alicp.jetcache.anno.CreateCache;
 import com.xiaonan.common.Result;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <p>Description: [jetCache缓存式样]</p>
@@ -60,8 +63,6 @@ public class JetCacheController {
 	 */
 	@CreateCache(name = "user:both:jetCache", expire = 120, cacheType = CacheType.BOTH, localLimit = 50)
 	private Cache<String, User> userBothCache;
-
-
 
 	/***
 	 * <p>Description:[远程缓存]</p>
@@ -137,11 +138,29 @@ public class JetCacheController {
 	}
 
 
+	/***
+	 * <p>Description:[自动刷新缓存]</p>
+	 *
+	 *       具体看jetCacheService
+	 *
+	 * Created on 2019/12/5
+	 * @param userName
+	 * @return com.xiaonan.common.Result<java.util.List < com.xiaonan.user.entity.User>>
+	 * @author 谢楠
+	 */
+	@PostMapping("cache/cacheRefresh")
+	public Result<List<User>> cacheUserRefresh(String userName) {
+		log.info("\n 进入方法缓存");
+		return Result.success(jetCacheService.userRefreshCache(userName));
+	}
+
+
 	private User setUser(String userName) {
 		User u = new User();
 		u.setUserName(userName);
 		u.setPersonName("admin");
 		u.setPassword("123456");
+		u.setCreateTime(new Date());
 		return u;
 	}
 }

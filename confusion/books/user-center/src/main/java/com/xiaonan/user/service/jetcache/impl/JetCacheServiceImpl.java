@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,6 +26,11 @@ public class JetCacheServiceImpl implements JetCacheService {
 		return setUser(userName);
 	}
 
+	@Override public List<User> userRefreshCache(String userName) {
+		log.info("\n 开始执行自动刷新缓存, 参数:{}", userName);
+		return setUser(userName);
+	}
+
 	private List<User> setUser(String userName) {
 		List<User> list = new ArrayList<>();
 		for (int i = 1; i < 11; i++) {
@@ -32,6 +38,8 @@ public class JetCacheServiceImpl implements JetCacheService {
 			u.setUserName(userName + i);
 			u.setPersonName("admin");
 			u.setPassword("123456");
+			u.setCreateTime(new Date());
+			u.setCreateBy(new Date().getTime() + "");
 			list.add(u);
 		}
 		return list;
