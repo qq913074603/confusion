@@ -1,4 +1,4 @@
-package com.xiaonan.user.controller;
+package com.xiaonan.user.controller.user;
 
 import com.alicp.jetcache.Cache;
 import com.alicp.jetcache.anno.CacheType;
