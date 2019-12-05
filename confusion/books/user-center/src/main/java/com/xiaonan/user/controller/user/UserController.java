@@ -1,8 +1,5 @@
 package com.xiaonan.user.controller.user;
 
-import com.alicp.jetcache.Cache;
-import com.alicp.jetcache.anno.CacheType;
-import com.alicp.jetcache.anno.CreateCache;
 import com.github.pagehelper.PageInfo;
 import com.xiaonan.user.entity.User;
 import com.xiaonan.user.service.user.UserService;
@@ -27,20 +24,7 @@ public class UserController {
 	@Resource
 	private UserService userService;
 
-	// 定义一个是String类型的远程缓存
-	@CreateCache(name ="i5xforyou.username", expire = 120, cacheType = CacheType.REMOTE)
-	private Cache<String, String> userNameCache;
-	// 定义一个是User对象的二级缓存(本地+远程)
-	@CreateCache(name ="i5xforyou.user", localExpire = 60, localLimit = 100, expire = 120, cacheType = CacheType.BOTH)
-	private Cache<String, User> userCache;
-
-
-	@PostMapping("/test")
-	public String test() {
-		userNameCache.put("name", "谢楠");
-		log.info("\n 测试日志是否记录");
-		return userNameCache.get("name");
-	}
+	
 
 	/***
 	 * <p>Description:[分页查询]</p>
