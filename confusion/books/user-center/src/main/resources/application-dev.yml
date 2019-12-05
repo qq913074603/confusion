@@ -56,6 +56,7 @@ mybatis:
   type-aliases-package: com.xiaonan.user.entity
   mapper-locations: classpath:/mybatis-mappers/*
 
+# 分页插件
 pagehelper:
   helper-dialect: mysql
   reasonable: true

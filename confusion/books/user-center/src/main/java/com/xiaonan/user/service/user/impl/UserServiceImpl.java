@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 	@Override public PageInfo<User> selectList(User user) {
 		PageHelper.startPage(user.getPageNum(), user.getPageSize());
 		List<User> blogList = userDAO.selectList(user);
-		PageInfo<User> pageInfo = new PageInfo<User>(blogList);
+		PageInfo<User> pageInfo = new PageInfo<>(blogList);
 		return pageInfo;
 
 	}
