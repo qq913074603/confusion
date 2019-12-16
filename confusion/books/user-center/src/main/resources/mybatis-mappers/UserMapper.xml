@@ -29,7 +29,7 @@
         last_time
     </sql>
     
-    <select id="selectList" resultMap="BaseResultMap">
+    <select id="selectListBy" resultMap="BaseResultMap">
         SELECT
             <include refid="Base_Column_List"/>
         FROM

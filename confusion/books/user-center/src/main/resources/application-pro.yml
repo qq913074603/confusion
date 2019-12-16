@@ -47,7 +47,7 @@ jetcache:
         maxIdle: 50
         maxTotal: 1000
         maxWait: 1000
-      #     uri: ['redis://password@192.168.14.231:6379/0','redis://password@192.168.14.232:6379/0','redis://password@192.168.14.233:6379/0']
+      # uri: ['redis://password@192.168.14.231:6379/0','redis://password@192.168.14.232:6379/0','redis://password@192.168.14.233:6379/0']
       uri:
         - redis://172.24.121.209:6379/5  #redis://密码@IP:端口/库
       readFrom: masterPreferred #master优先
@@ -56,9 +56,3 @@ mybatis:
   type-aliases-package: com.xiaonan.user.entity
   mapper-locations: classpath:/mybatis-mappers/*
 
-# 分页插件
-pagehelper:
-  helper-dialect: mysql
-  reasonable: true
-  support-methods-arguments: true
-  params: count=countSql

@@ -1,7 +1,6 @@
 package com.xiaonan.user.service.user.impl;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xiaonan.user.dao.UserDAO;
 import com.xiaonan.user.entity.User;
 import com.xiaonan.user.service.user.UserService;
@@ -24,11 +23,12 @@ public class UserServiceImpl implements UserService {
 	@Resource
 	private UserDAO userDAO;
 
-	@Override public PageInfo<User> selectList(User user) {
-		PageHelper.startPage(user.getPageNum(), user.getPageSize());
-		List<User> blogList = userDAO.selectList(user);
-		PageInfo<User> pageInfo = new PageInfo<>(blogList);
-		return pageInfo;
-
+	@Override public List<User> selectListByInfo(User user) {
+		// 参数构造
+		QueryWrapper<User> wr = new QueryWrapper<>();
+		if (null != user) {
+			wr.like("user_name", user.getUserName());
+		}
+		return userDAO.selectList(wr);
 	}
 }

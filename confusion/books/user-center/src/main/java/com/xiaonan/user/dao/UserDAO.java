@@ -1,7 +1,7 @@
 package com.xiaonan.user.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xiaonan.user.entity.User;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -14,8 +14,7 @@ import java.util.List;
  * @version 1.0
  * Copyright (c) 2019 北京柯莱特科技有限公司
  */
-@Mapper
-public interface UserDAO {
+public interface UserDAO extends BaseMapper<User> {
 
 	/***
 	 * <p>Description:[获取集合]</p>
@@ -24,6 +23,6 @@ public interface UserDAO {
 	 * @return java.util.List<com.xiaonan.user.entity.User>
 	 * @author 谢楠
 	 */
-	List<User> selectList(@Param("entity") User user);
+	List<User> selectListBy(@Param("entity") User user);
 
 }

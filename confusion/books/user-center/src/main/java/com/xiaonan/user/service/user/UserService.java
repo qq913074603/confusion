@@ -1,6 +1,5 @@
 package com.xiaonan.user.service.user;
 
-import com.github.pagehelper.PageInfo;
 import com.xiaonan.user.entity.User;
 
 import java.util.List;
@@ -16,11 +15,12 @@ import java.util.List;
 public interface UserService {
 
 	/***
-	 * <p>Description:[分页查询]</p>
-	 * Created on 2019/12/3
+	 * <p>Description:[根据条件查询]</p>
+	 * Created on 2019/12/16
 	 * @param user
 	 * @return java.util.List<com.xiaonan.user.entity.User>
 	 * @author 谢楠
 	 */
-	PageInfo<User> selectList(User user);
+	List<User> selectListByInfo(User user);
+
 }

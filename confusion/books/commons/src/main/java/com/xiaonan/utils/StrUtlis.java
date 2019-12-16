@@ -1,7 +1,6 @@
 package com.xiaonan.utils;
 
-import cn.hutool.crypto.SecureUtil;
-import cn.hutool.crypto.digest.MD5;
+import com.alibaba.fastjson.JSON;
 
 /**
  * <p>Description: [类功能描述]</p>
@@ -13,12 +12,8 @@ import cn.hutool.crypto.digest.MD5;
  */
 public class StrUtlis {
 
-	public static void sout(String str){
-		System.out.println("\n 输出内容:" + str);
+	public static void sout(Object o){
+		System.out.println("\n 输出内容:" + JSON.toJSONString(o));
 	}
 
-	public static void main(String[] args) {
-		String xienan = SecureUtil.md5("xienan");
-		System.out.println(xienan);
-	}
 }

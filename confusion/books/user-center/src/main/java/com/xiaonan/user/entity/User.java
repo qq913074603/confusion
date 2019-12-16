@@ -1,5 +1,6 @@
 package com.xiaonan.user.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.xiaonan.common.PageRes;
 import lombok.Data;
 
@@ -10,7 +11,8 @@ import java.util.Date;
  * 用户
  */
 @Data
-public class User extends PageRes implements Serializable {
+@TableName("t_user")
+public class User implements Serializable {
 
     private static final long serialVersionUID = 7038728005305707001L;
 

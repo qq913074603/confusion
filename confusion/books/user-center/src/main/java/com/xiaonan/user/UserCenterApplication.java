@@ -2,6 +2,7 @@ package com.xiaonan.user;
 
 import com.alicp.jetcache.anno.config.EnableCreateCacheAnnotation;
 import com.alicp.jetcache.anno.config.EnableMethodCache;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -16,6 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableCreateCacheAnnotation
 @EnableMethodCache(basePackages = { "com.xiaonan.user" })
 @SpringBootApplication
+@MapperScan("com.xiaonan.user.dao")
 public class UserCenterApplication {
 
 	public static void main(String[] args) {
