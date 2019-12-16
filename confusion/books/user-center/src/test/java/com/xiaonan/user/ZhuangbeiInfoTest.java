@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * <p>Description: [类功能描述]</p>
+ * <p>Description: [装备测试]</p>
  * Created on 2019/12/16
  *
  * @author <a href="mailto: xienan@camelotchina.com">谢楠</a>

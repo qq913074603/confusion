@@ -55,6 +55,7 @@ jetcache:
 mybatis-plus:
   type-aliases-package: com.xiaonan.user.entity
   mapper-locations: classpath:/mybatis-mappers/*
+  # 开启sql打印
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
