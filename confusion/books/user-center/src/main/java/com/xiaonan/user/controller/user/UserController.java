@@ -24,7 +24,7 @@ public class UserController {
 	@Resource
 	private UserService userService;
 
-	
+
 
 	/***
 	 * <p>Description:[分页查询]</p>
