@@ -3,7 +3,7 @@ app:
 
 apollo:
   # dev开发环境
-  meta: http://123.57.69.18:5001
+  meta: http://123.57.69.18:5004
 
 server:
   port: 8080
