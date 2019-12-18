@@ -1,3 +1,10 @@
+app:
+  id: user-center
+
+apollo:
+  # dev开发环境
+  meta: http://123.57.69.18:5001
+
 server:
   port: 8080
 
@@ -58,4 +65,7 @@ mybatis-plus:
   # 开启sql打印
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+create:
+  name: xienan
 

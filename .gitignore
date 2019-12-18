@@ -44,3 +44,4 @@ node_modules
 #svn ignore
 .svn/
 *.log
+*.log.gz

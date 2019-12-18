@@ -31,6 +31,7 @@ public class ZhuangbeiInfoTest {
 	@Test
 	public void selectPageList() {
 		ZhuangbeiInfo info = new ZhuangbeiInfo();
+		info.setPageSize(100);
 		IPage<ZhuangbeiInfo> zhuangbeiInfoIPage = zhuangbeiInfoService.selectPageList(info);
 		StrUtlis.sout(zhuangbeiInfoIPage);
 		List<ZhuangbeiInfo> records = zhuangbeiInfoIPage.getRecords();
