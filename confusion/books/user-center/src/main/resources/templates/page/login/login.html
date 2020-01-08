@@ -40,12 +40,35 @@
 <script type="text/javascript">
     layui.use(['form', 'layer', 'jquery'], function () {
         var form = layui.form, $ = layui.jquery, layer = parent.layer === undefined ? layui.layer : top.layer;
-
         //登录按钮
         form.on("submit(login)", function (data) {
-            $(this).text("登录中...").attr("disabled", "disabled").addClass("layui-disabled");
+            // 防止重复点击
+            $(this).text("登录中...").attr("disabled", true).addClass("layui-disabled");
+            var userName = $("#userName").val(),
+                password = $("#password").val();
+            $.post("/sys/login",
+                {
+                    "userName": userName,
+                    "password": password
+                },
+                function(data){
+                    console.log(data)
+                    if (data.code == -1) {
+                        layer.msg(data.msg, {icon: 3});
+                    } else {
+                        window.location.href = "index";
+                    }
+                //返回的JSON数据
+                },
+                "json"
+            )
+            // setTimeout(function () {
+            //     window.location.href = "index";
+            // }, 1000);
+            // 解除限制
             setTimeout(function () {
-                window.location.href = "index";
+                // window.location.href = "index";
+                $(t_his).text("登录").attr("disabled", false).removeClass("layui-disabled");
             }, 1000);
             return false;
         });
