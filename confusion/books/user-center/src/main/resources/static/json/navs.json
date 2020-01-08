@@ -18,21 +18,9 @@
     "spread": false,
     "children": [
       {
-        "title": "401页面",
+        "title": "404页面",
         "icon": "&#xe61c;",
-        "href": "/sys/redirctUrl?url=page/error",
-        "spread": false
-      },
-      {
-        "title": "登录页面v1",
-        "icon": "&#xe609;",
-        "href": "/sys/redirctUrl?url=page/login/login_v1",
-        "spread": false
-      },
-      {
-        "title": "登录页面v2",
-        "icon": "&#xe609;",
-        "href": "/sys/redirctUrl?url=page/login/login",
+        "href": "/sys/redirctUrl?url=page/404",
         "spread": false
       }
     ]

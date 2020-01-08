@@ -22,6 +22,11 @@ public class RedirctController {
 		return "index";
 	}
 
+	@GetMapping("/login")
+	public String login() {
+		return "page/login/login";
+	}
+
 	/**
 	 * 主页
 	 * @return

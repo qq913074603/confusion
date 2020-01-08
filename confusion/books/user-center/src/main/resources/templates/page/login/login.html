@@ -9,13 +9,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
-    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+    <link rel="icon" href="../../../static/favicon.ico">
+    <link rel="stylesheet" href="../../../static/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../static/css/public.css" media="all"/>
 </head>
 <body class="loginBody">
 <form class="layui-form">
-    <div class="login_face"><img src="../../images/face.jpg" class="userAvatar"></div>
+    <div class="login_face"><img src="../../../static/images/face.jpg" class="userAvatar"></div>
     <div class="layui-form-item input-item">
         <label for="userName">用户名</label>
         <input type="text" placeholder="请输入用户名" autocomplete="off" id="userName" class="layui-input"
@@ -35,8 +35,8 @@
         <button class="layui-btn layui-btn-fluid" lay-filter="login" lay-submit>登录</button>
     </div>
 </form>
-<script type="text/javascript" src="../../layui/layui.js"></script>
-<script type="text/javascript" src="../../js/cache.js"></script>
+<script type="text/javascript" src="../../../static/layui/layui.js"></script>
+<script type="text/javascript" src="../../../static/js/cache.js"></script>
 <script type="text/javascript">
     layui.use(['form', 'layer', 'jquery'], function () {
         var form = layui.form, $ = layui.jquery, layer = parent.layer === undefined ? layui.layer : top.layer;
@@ -45,7 +45,7 @@
         form.on("submit(login)", function (data) {
             $(this).text("登录中...").attr("disabled", "disabled").addClass("layui-disabled");
             setTimeout(function () {
-                window.location.href = "/layuicms/index.html";
+                window.location.href = "index";
             }, 1000);
             return false;
         });
