@@ -1,0 +1,14 @@
+{
+	"cmsName": "layuiCMS",
+	"version": "layuiCMS2.0精简版",
+	"author": "管理员",
+	"homePage": "index.html",
+	"server": "Centos 7.3",
+	"dataBase": "MySQL5.7.28",
+	"maxUpload": "2M",
+	"userRights": "管理员",
+	"description": "这是马哥闲来无事做的一套基于layui的cms模版，纯静态页面，不包含数据库",
+	"powerby": "Copyright @2019 idev.run",
+	"record": "京ICP备14040xxx号-1",
+	"keywords": "layuiCMS,后台模版,管理员"
+}
